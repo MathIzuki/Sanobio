@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <title>Identification | Sanobio</title>
+</head>
+<body>
+    <form action="php/verificationCode.php" method="post">
+        <img src="image/logo.png" alt="LOGO" width="200px" height="120px">
+        <div class="box">
+            <i class="fa fa-lock" aria-hidden="true"></i>
+            <input type="password" name="pass" id="pass" maxlength="5"
+            required placeholder="Entrez votre code thérapeute">
+            <i class="fa fa-eye" aria-hidden="true"></i>
+        </div>
+        <div class="under-box">
+            <input type="submit" value="Entrer">
+            <a href="#" >
+                <p>Vous ne possédez pas de code ?</p>
+            </a>
+
+        </div>
+
+    </form>
+
+    <script type="text/javascript">
+        const pass = document.querySelector('#pass');
+        const show = document.querySelector('.fa-eye');
+        show.addEventListener('click',()=>{
+            if(pass.type === 'password'){
+                pass.type = 'text';
+                show.classList.add('hide');
+            }else{
+                pass.type = 'password';
+                show.classList.remove('hide');
+            }
+        });
+    </script>
+</body>
+</html>
